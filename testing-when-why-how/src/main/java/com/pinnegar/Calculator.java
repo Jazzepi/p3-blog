@@ -30,7 +30,10 @@ public class Calculator {
             this.dividend = dividend;
         }
 
-        public int by(int divisor) {
+        public int by(int divisor) throws Exception {
+            if (divisor == 0) {
+                throw new Exception("You tried to divide [" +  dividend + "] by zero which is illegal.");
+            }
             return dividend / divisor;
         }
     }
